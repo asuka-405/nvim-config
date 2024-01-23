@@ -1,7 +1,20 @@
+require("utils")
 require("asuka")
 
-local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-end
+vim.g.clipboard = {
+   name = 'xclip',
+   copy = {
+      ['+'] = 'xclip -selection clipboard',
+      ['*'] = 'xclip -selection primary',
+      ['%'] = 'xclip -selection secondary',
+      ['n'] = 'xclip -selection clipboard',
+   },
+   paste = {
+      ['+'] = 'xclip -selection clipboard -o',
+      ['*'] = 'xclip -selection primary -o',
+      ['%'] = 'xclip -selection secondary -o',
+      ['n'] = 'xclip -selection clipboard -o',
+   },
+   cache_enabled = 0,
+}
 
