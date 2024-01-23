@@ -1,4 +1,3 @@
--- Function to check if a directory exists
 local function is_dir_empty(dir)
     local ok, _, _ = os.execute('ls -A "' .. dir .. '" 2>/dev/null')
     return ok

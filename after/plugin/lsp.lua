@@ -36,5 +36,5 @@ cmp.setup({
     -- Scroll up and down in the completion documentation
     ['<C-Tab>'] = cmp.mapping.scroll_docs(-4),
     ['<C-S-Tab>'] = cmp.mapping.scroll_docs(4),
-  })
+  }) 
 })
